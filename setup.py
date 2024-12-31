@@ -4,7 +4,7 @@ packages=find_packages()
 print('found packages:',packages)
 setup(
     name='brainnetworks',
-    version='0.2.1',
+    version='0.3.2',
     packages=packages,
     include_package_data=True,
     license='MIT License',

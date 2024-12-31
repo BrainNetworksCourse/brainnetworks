@@ -2,16 +2,21 @@
 utility functions for analyzing core-nets data
 """
 
+import os
 import pandas,numpy
 import networkx as nx
+import pkg_resources
 
+
+DATA_PATH = pkg_resources.resource_filename('brainnetworks', 'data/')
 
 def get_tract_graph(FLNe_threshold=10e-4,limit_to_target=False):
   """
     Load data from Markov et al. 2012 study
     limit_to_target: only include target regions
   """
-  tracing_data = pandas.read_excel('core-nets/Cercor_2012 Table.xls')
+  tracing_data = pandas.read_excel(os.path.join(DATA_PATH,
+                'core-nets/Cercor_2012 Table.xls'))
 
   tract_dict={}
   source_regions=[]
